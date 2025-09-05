@@ -1,0 +1,355 @@
+components:
+  fixed_header:
+    description: "固定ヘッダーナビゲーション"
+    specs:
+      height: "64px"
+      background: "#FFFFFF"
+      shadow: "0 2px 4px rgba(0,0,0,0.1)"
+      z_index: 1000
+    elements:
+      logo:
+        width: "200px"
+        position: "left"
+      cta_buttons:
+        position: "right"
+        gap: "16px"
+    states:
+      scroll:
+        background_opacity: 0.95
+      mobile:
+        height: "56px"
+        logo_width: "150px"
+    accessibility:
+      role: "banner"
+      aria_label: "メインナビゲーション"
+    acceptance_criteria:
+      - "ヘッダーがスクロール時も画面上部に固定される"
+      - "CTAボタンのタップ領域が44px以上"
+      - "タブキーでナビゲーション可能"
+      - "モバイルで崩れない"
+
+  age_tabs:
+    description: "年齢別タブ切替"
+    specs:
+      container_padding: "24px"
+      tab_height: "48px"
+      active_indicator: "border-bottom 3px #FF69B4"
+    tabs:
+      - label: "年中・年長"
+        value: "kindergarten"
+        age_range: "4-6"
+      - label: "小1・小2"
+        value: "elementary_low"
+        age_range: "7-8"
+      - label: "小3・小4"
+        value: "elementary_mid"
+        age_range: "9-10"
+      - label: "小5・小6"
+        value: "elementary_high"
+        age_range: "11-12"
+    states:
+      active:
+        color: "#FF69B4"
+        font_weight: 700
+      inactive:
+        color: "#6B7280"
+        font_weight: 400
+      hover:
+        background: "rgba(255,105,180,0.1)"
+    accessibility:
+      role: "tablist"
+      aria_orientation: "horizontal"
+      focus_visible: "outline 2px #5AA9E6"
+    acceptance_criteria:
+      - "タブ切替で対応するコンテンツが表示"
+      - "アクティブタブが視覚的に明確"
+      - "キーボードの矢印キーで切替可能"
+      - "選択状態がスクリーンリーダーで読み上げ"
+
+  plan_card:
+    description: "プラン説明カード"
+    specs:
+      width: "100%"
+      max_width: "380px"
+      padding: "24px"
+      border_radius: "16px"
+      background: "#FFFFFF"
+      border: "1px solid #E5E7EB"
+    elements:
+      title:
+        font_size: "20px"
+        font_weight: 700
+        color: "#222222"
+        margin_bottom: "16px"
+      features_list:
+        font_size: "16px"
+        line_height: 1.8
+        marker: "・"
+        color: "#222222"
+      cta_button:
+        width: "100%"
+        margin_top: "24px"
+    states:
+      hover:
+        shadow: "0 8px 16px rgba(0,0,0,0.1)"
+        transform: "translateY(-4px)"
+      selected:
+        border_color: "#FF69B4"
+        border_width: "2px"
+    accessibility:
+      role: "article"
+      heading_level: 3
+    acceptance_criteria:
+      - "カード内のテキストが読みやすい"
+      - "ホバー時のアニメーションがスムーズ"
+      - "モバイルで横スクロール可能"
+      - "CTAボタンがカード内で目立つ"
+
+  availability_chip:
+    description: "空き枠表示チップ"
+    specs:
+      padding: "4px 12px"
+      border_radius: "20px"
+      font_size: "14px"
+      font_weight: 500
+    variants:
+      available:
+        background: "#10B981"
+        color: "#FFFFFF"
+        text: "残り{count}席"
+      low:
+        background: "#FFD166"
+        color: "#222222"
+        text: "残りわずか"
+        condition: "count <= 3"
+      full:
+        background: "#6B7280"
+        color: "#FFFFFF"
+        text: "満員御礼"
+        badge: true
+    accessibility:
+      role: "status"
+      aria_live: "polite"
+    acceptance_criteria:
+      - "残席数が3以下で「残りわずか」表示"
+      - "満席時にグレーアウト表示"
+      - "色以外でも状態が判別可能"
+      - "スクリーンリーダーで状態変更を通知"
+
+  fixed_footer_cta:
+    description: "固定フッターCTA"
+    specs:
+      height: "80px"
+      background: "linear-gradient(to top, #FFFFFF, rgba(255,255,255,0.98))"
+      shadow: "0 -4px 12px rgba(0,0,0,0.08)"
+      padding: "16px"
+      z_index: 999
+    elements:
+      message:
+        font_size: "14px"
+        color: "#222222"
+        margin_bottom: "8px"
+      buttons_container:
+        display: "flex"
+        gap: "12px"
+      primary_button:
+        flex: 1
+        background: "#FF69B4"
+        color: "#FFFFFF"
+        height: "44px"
+      secondary_button:
+        flex: 1
+        background: "#FFFFFF"
+        border: "1px solid #FF69B4"
+        color: "#FF69B4"
+        height: "44px"
+    states:
+      hidden:
+        transform: "translateY(100%)"
+        condition: "scroll_position < 300px"
+      visible:
+        transform: "translateY(0)"
+        transition: "transform 0.3s ease"
+    accessibility:
+      role: "complementary"
+      aria_label: "申込みアクション"
+    acceptance_criteria:
+      - "スクロール300px以上で表示"
+      - "ボタンの最小高さ44px確保"
+      - "横並び2ボタンが画面幅で崩れない"
+      - "フッター非表示時もコンテンツが隠れない"
+
+  faq_accordion:
+    description: "FAQアコーディオン"
+    specs:
+      item_padding: "20px"
+      border_bottom: "1px solid #E5E7EB"
+      icon_size: "24px"
+    elements:
+      question:
+        font_size: "18px"
+        font_weight: 500
+        color: "#222222"
+        cursor: "pointer"
+      answer:
+        font_size: "16px"
+        line_height: 1.8
+        color: "#6B7280"
+        margin_top: "12px"
+      toggle_icon:
+        content: "＋/−"
+        transition: "transform 0.2s"
+    states:
+      closed:
+        answer_display: "none"
+        icon: "＋"
+      open:
+        answer_display: "block"
+        icon: "−"
+        icon_rotation: "180deg"
+    accessibility:
+      button_role: "button"
+      aria_expanded: "true/false"
+      region_role: "region"
+    acceptance_criteria:
+      - "クリックで開閉がスムーズ"
+      - "一度に1つだけ開く設定可能"
+      - "キーボードのEnter/Spaceで操作"
+      - "開閉状態がaria-expandedで伝達"
+
+  form_step:
+    description: "多段階フォーム"
+    specs:
+      container_max_width: "600px"
+      step_indicator_height: "48px"
+      field_margin: "24px"
+    steps:
+      - id: "plan_select"
+        title: "プラン選択"
+        required: true
+      - id: "schedule_select"
+        title: "日時選択"
+        required: true
+      - id: "attendee_info"
+        title: "受講者情報"
+        required: true
+      - id: "payment"
+        title: "お支払い"
+        required: true
+      - id: "confirmation"
+        title: "確認"
+        required: false
+    elements:
+      progress_bar:
+        height: "4px"
+        background: "#E5E7EB"
+        fill: "#FF69B4"
+      step_number:
+        size: "32px"
+        border_radius: "50%"
+        active_bg: "#FF69B4"
+        inactive_bg: "#E5E7EB"
+      input_field:
+        height: "48px"
+        border: "1px solid #D1D5DB"
+        focus_border: "#5AA9E6"
+        error_border: "#EF4444"
+    validation:
+      email:
+        pattern: "email"
+        error: "正しいメールアドレスを入力してください"
+      phone:
+        pattern: "tel"
+        error: "電話番号は数字で入力してください"
+      required:
+        error: "必須項目です"
+    accessibility:
+      aria_required: "true"
+      aria_invalid: "true/false"
+      aria_describedby: "error_message_id"
+    acceptance_criteria:
+      - "各ステップの進捗が視覚的に分かる"
+      - "エラー時に該当項目が赤枠表示"
+      - "戻るボタンで前ステップに移動可能"
+      - "入力内容が次ステップでも保持"
+
+  schedule_selector:
+    description: "日時選択カレンダー"
+    specs:
+      calendar_width: "100%"
+      date_cell_height: "40px"
+      time_slot_height: "48px"
+    elements:
+      month_navigation:
+        arrow_size: "24px"
+        month_font_size: "18px"
+      date_cell:
+        available_bg: "#FFFFFF"
+        selected_bg: "#FF69B4"
+        disabled_bg: "#F3F4F6"
+      time_slot:
+        padding: "12px"
+        border: "1px solid #E5E7EB"
+        selected_border: "2px solid #FF69B4"
+      availability_badge:
+        position: "absolute"
+        top: "4px"
+        right: "4px"
+    states:
+      available:
+        cursor: "pointer"
+        hover_bg: "rgba(255,105,180,0.1)"
+      full:
+        cursor: "not-allowed"
+        opacity: 0.5
+      selected:
+        font_weight: 700
+        color: "#FFFFFF"
+    accessibility:
+      role: "grid"
+      aria_label: "日程選択カレンダー"
+      aria_selected: "true/false"
+    acceptance_criteria:
+      - "満席日時がグレーアウト表示"
+      - "選択した日時がハイライト"
+      - "月送りがスムーズ"
+      - "モバイルでタップしやすいサイズ"
+
+  gallery_carousel:
+    description: "作品ギャラリー"
+    specs:
+      container_padding: "24px"
+      item_width: "300px"
+      item_gap: "16px"
+      navigation_button_size: "48px"
+    elements:
+      image:
+        aspect_ratio: "16:9"
+        object_fit: "cover"
+        border_radius: "12px"
+      caption:
+        font_size: "14px"
+        color: "#6B7280"
+        margin_top: "8px"
+      navigation:
+        arrow_color: "#222222"
+        background: "rgba(255,255,255,0.9)"
+        hover_bg: "#FFFFFF"
+      pagination:
+        dot_size: "8px"
+        active_color: "#FF69B4"
+        inactive_color: "#D1D5DB"
+    features:
+      lazy_load: true
+      swipe_enabled: true
+      auto_play: false
+      loop: true
+    accessibility:
+      role: "region"
+      aria_label: "作品ギャラリー"
+      img_alt: "required"
+    acceptance_criteria:
+      - "画像の遅延読み込みが動作"
+      - "スワイプ操作でスライド切替"
+      - "ページネーションドットが連動"
+      - "画像にalt属性が設定済み"

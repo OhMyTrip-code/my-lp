@@ -1,0 +1,344 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://jprep-benesse-kids.jp/#organization",
+    "name": "J PREP Kids × Benesse",
+    "alternateName": "J PREP Kids",
+    "url": "https://jprep-benesse-kids.jp",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jprep-benesse-kids.jp/images/logo.png",
+      "width": 600,
+      "height": 60
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+81-120-XXX-XXX",
+      "contactType": "Customer Service",
+      "areaServed": "JP",
+      "availableLanguage": ["Japanese", "English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/jprepkids",
+      "https://twitter.com/jprepkids",
+      "https://www.instagram.com/jprepkids"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "渋谷区XXX",
+      "addressLocality": "渋谷区",
+      "addressRegion": "東京都",
+      "postalCode": "150-0001",
+      "addressCountry": "JP"
+    }
+  },
+  
+  "course": {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "https://jprep-benesse-kids.jp/#course",
+    "name": "J PREP Kids × Benesse STEAM教育プログラム",
+    "description": "思考力と創造性を育む、年中〜小6向けの総合STEAM教育プログラム。J PREPとBenesseが共同開発した、プログラミング、探究学習、クリエイティブ表現を統合したカリキュラムです。",
+    "provider": {
+      "@id": "https://jprep-benesse-kids.jp/#organization"
+    },
+    "courseCode": "JPKB-STEAM-2025",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "name": "はじめての探究（年中・年長）",
+        "description": "身の回りの「なぜ？」を科学する探究プログラム",
+        "startDate": "2025-11-01",
+        "endDate": "2026-03-31",
+        "location": {
+          "@type": "Place",
+          "name": "J PREP Kids 渋谷校",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "渋谷区XXX",
+            "addressLocality": "渋谷区",
+            "addressRegion": "東京都",
+            "postalCode": "150-0001",
+            "addressCountry": "JP"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "10000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2025-09-01",
+          "validThrough": "2025-10-31"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "プログラミング入門（小1・小2）",
+        "description": "Scratchでゲーム制作を学ぶプログラミング入門",
+        "startDate": "2025-11-01",
+        "endDate": "2026-03-31",
+        "offers": {
+          "@type": "Offer",
+          "price": "10000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "アドバンスド探究（小3・小4）",
+        "description": "社会課題の発見と解決を学ぶ上級探究プログラム",
+        "startDate": "2025-11-01",
+        "endDate": "2026-03-31",
+        "offers": {
+          "@type": "Offer",
+          "price": "10000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "AI・機械学習入門（小5・小6）",
+        "description": "Python実践とAI基礎を学ぶ最上級プログラム",
+        "startDate": "2025-11-01",
+        "endDate": "2026-03-31",
+        "offers": {
+          "@type": "Offer",
+          "price": "10000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "student",
+      "ageRange": "4-12"
+    },
+    "educationalLevel": "幼稚園年中〜小学6年生",
+    "teaches": [
+      "プログラミング",
+      "STEAM教育",
+      "探究学習",
+      "クリエイティブ表現",
+      "問題解決力",
+      "論理的思考"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  
+  "events": [
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "@id": "https://jprep-benesse-kids.jp/event/trial-20251001",
+      "name": "【無料体験会】年中・年長向けSTEAM教育プログラム",
+      "description": "J PREP Kids × Benesseの探究学習を親子で体験できる無料体験会です。",
+      "startDate": "2025-10-01T16:00:00+09:00",
+      "endDate": "2025-10-01T17:30:00+09:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "J PREP Kids 渋谷校",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "渋谷区XXX",
+          "addressLocality": "渋谷区",
+          "addressRegion": "東京都",
+          "postalCode": "150-0001",
+          "addressCountry": "JP"
+        }
+      },
+      "organizer": {
+        "@id": "https://jprep-benesse-kids.jp/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/LimitedAvailability",
+        "availableAtOrFrom": {
+          "@type": "Place",
+          "name": "J PREP Kids 渋谷校"
+        },
+        "inventoryLevel": {
+          "@type": "QuantitativeValue",
+          "value": 2,
+          "maxValue": 6
+        },
+        "validFrom": "2025-09-01",
+        "url": "https://jprep-benesse-kids.jp/register"
+      },
+      "maximumAttendeeCapacity": 6,
+      "remainingAttendeeCapacity": 2,
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "parent",
+        "ageRange": "4-6"
+      },
+      "isAccessibleForFree": true
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "@id": "https://jprep-benesse-kids.jp/event/trial-20251005",
+      "name": "【無料体験会】小1・小2向けプログラミング入門",
+      "description": "Scratchを使った楽しいプログラミング体験会です。",
+      "startDate": "2025-10-05T13:00:00+09:00",
+      "endDate": "2025-10-05T14:30:00+09:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "J PREP Kids 渋谷校"
+      },
+      "organizer": {
+        "@id": "https://jprep-benesse-kids.jp/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/SoldOut",
+        "inventoryLevel": {
+          "@type": "QuantitativeValue",
+          "value": 0,
+          "maxValue": 6
+        }
+      },
+      "maximumAttendeeCapacity": 6,
+      "remainingAttendeeCapacity": 0,
+      "isAccessibleForFree": true
+    }
+  ],
+  
+  "faqPage": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "プログラミング経験がなくても大丈夫ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、初心者から段階的に学べるカリキュラムです。年齢に応じた適切なレベルから始められ、個々のペースに合わせて進めることができます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "保護者の同伴は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "年中・年長のお子さまは保護者同伴を推奨しています。小学生は任意ですが、初回は同伴いただくことをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "欠席した場合の振替はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "月1回まで振替が可能です。また、すべての授業は録画されており、欠席された場合も後日視聴いただけます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "兄弟割引はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、2人目以降のお子さまは受講料が20%割引となります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "必要な持ち物はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "筆記用具のみお持ちください。PCやタブレット等の機器は教室でご用意しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "体験会は何回まで参加できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "体験会は1家族につき1回限りとなります。複数のプランに興味がある場合は、体験会で講師にご相談ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "オンライン受講は可能ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在は対面授業のみとなっていますが、保護者の方はオンラインで授業の様子をご覧いただける配信サービスをご利用いただけます。"
+        }
+      }
+    ]
+  },
+  
+  "breadcrumb": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://jprep-benesse-kids.jp"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "プログラム",
+        "item": "https://jprep-benesse-kids.jp/#programs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "料金・日程",
+        "item": "https://jprep-benesse-kids.jp/#pricing"
+      }
+    ]
+  },
+  
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "J PREP Kids × Benesse",
+    "url": "https://jprep-benesse-kids.jp",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://jprep-benesse-kids.jp/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  
+  "openGraph": {
+    "og:title": "J PREP Kids × Benesse | 思考力と創造性を育むSTEAM教育",
+    "og:type": "website",
+    "og:url": "https://jprep-benesse-kids.jp",
+    "og:image": "https://jprep-benesse-kids.jp/images/og-image.jpg",
+    "og:description": "年中〜小6向け、J PREPとBenesseが共同開発したSTEAM教育プログラム。プログラミング、探究学習、創造性を育む少人数制の体験型学習。",
+    "og:site_name": "J PREP Kids × Benesse",
+    "og:locale": "ja_JP"
+  },
+  
+  "twitter": {
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@jprepkids",
+    "twitter:title": "J PREP Kids × Benesse | 思考力と創造性を育むSTEAM教育",
+    "twitter:description": "年中〜小6向けSTEAM教育プログラム。無料体験会受付中！",
+    "twitter:image": "https://jprep-benesse-kids.jp/images/twitter-card.jpg"
+  }
+}
