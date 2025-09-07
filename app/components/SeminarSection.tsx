@@ -10,20 +10,18 @@ const seminars = [
     description: '子どもの「なぜ？」を深掘りし、AIを使って探究学習を加速させる方法を学びます',
     duration: '90分',
     price: '¥5,000',
-    instructor: {
-      name: '田中 健太',
-      title: 'AI教育スペシャリスト',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face',
-      bio: '元Google Japan、教育×AI領域で10年の経験'
-    },
     features: [
       'ChatGPTを使った調べ学習の方法',
       '画像生成AIで創造力を表現',
       '親子で取り組める探究プロジェクト',
       'デジタルリテラシーの基礎'
     ],
-    schedule: '2025年10月20日（日）10:00-11:30',
-    capacity: '親子6組限定',
+    scheduleInfo: '10月中月10回開催',
+    timeSlots: {
+      weekdays: ['18:00-20:00', '21:00-23:00'],
+      weekends: ['10:00-12:00', '18:00-20:00', '21:00-23:00']
+    },
+    capacity: '親子6組限定（各回）',
     formUrl: 'https://forms.google.com/your-form-1'
   },
   {
@@ -33,20 +31,18 @@ const seminars = [
     description: 'AIツールを活用して、試験対策と実用的な英語力を同時に身につける学習法',
     duration: '120分',
     price: '¥5,000',
-    instructor: {
-      name: 'Sarah Johnson',
-      title: '英語教育コンサルタント',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b29c?w=60&h=60&fit=crop&crop=face',
-      bio: 'TESOL認定講師、AI英語学習法の第一人者'
-    },
     features: [
       'AI英会話アプリの効果的な使い方',
       '英検対策×実践英語の学習設計',
       '発音矯正AIツールの活用法',
       '家庭での英語環境づくり'
     ],
-    schedule: '2025年10月27日（日）13:00-15:00',
-    capacity: '親子8組限定',
+    scheduleInfo: '10月中月10回開催',
+    timeSlots: {
+      weekdays: ['18:00-20:00', '21:00-23:00'],
+      weekends: ['10:00-12:00', '18:00-20:00', '21:00-23:00']
+    },
+    capacity: '親子6組限定（各回）',
     formUrl: 'https://forms.google.com/your-form-2'
   },
   {
@@ -56,20 +52,18 @@ const seminars = [
     description: '現役東大生が実践する、AIを活用した効率的な学習方法を伝授します',
     duration: '90分',
     price: '¥5,000',
-    instructor: {
-      name: '山田 太郎',
-      title: '東京大学工学部4年',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face',
-      bio: '全国模試1位、AI学習法で偏差値20アップ'
-    },
     features: [
       'AIを使った暗記術・理解促進法',
       '苦手科目の克服戦略',
       'テスト対策の時間配分最適化',
       '集中力を高めるAIツール活用'
     ],
-    schedule: '2025年10月6日（日）14:00-15:30',
-    capacity: '10名限定',
+    scheduleInfo: '10月中月10回開催',
+    timeSlots: {
+      weekdays: ['18:00-20:00', '21:00-23:00'],
+      weekends: ['10:00-12:00', '18:00-20:00', '21:00-23:00']
+    },
+    capacity: '親子6組限定（各回）',
     formUrl: 'https://forms.google.com/your-form-3'
   }
 ]
@@ -84,7 +78,7 @@ export default function SeminarSection() {
           <span className="inline-block px-4 py-1.5 bg-blue-100 text-[#0073e6] text-sm font-semibold rounded-full mb-6">
             2025年10月開催
           </span>
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight animate-fadeInUp">
             選べる3つのセミナー
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -96,9 +90,9 @@ export default function SeminarSection() {
           {seminars.map((seminar, index) => (
             <div 
               key={seminar.id}
-              className="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+              className="group relative bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 card-hover"
               style={{
-                animation: `fadeIn 0.6s ease-out ${index * 0.1}s both`
+                animation: `fadeInUp 0.8s ease-out ${index * 0.2}s both`
               }}
             >
               {/* Gradient accent */}
@@ -120,28 +114,14 @@ export default function SeminarSection() {
                   </p>
                 </div>
 
-                {/* Instructor */}
-                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl mb-6">
-                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                    <img 
-                      src={seminar.instructor.image} 
-                      alt={seminar.instructor.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{seminar.instructor.name}</p>
-                    <p className="text-sm text-gray-600">{seminar.instructor.title}</p>
-                  </div>
-                </div>
 
                 {/* Features */}
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">学べること</h4>
                   <ul className="space-y-2">
                     {seminar.features.slice(0, 3).map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-gray-600">
-                        <svg className="w-4 h-4 text-[#0073e6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <li key={idx} className="flex items-start text-sm text-gray-600 hover:translate-x-2 transition-transform duration-300">
+                        <svg className="w-4 h-4 text-[#0073e6] mr-2 mt-0.5 flex-shrink-0 icon-bounce" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                         </svg>
                         {feature}
@@ -170,19 +150,63 @@ export default function SeminarSection() {
                   )}
                 </div>
 
+                {/* Schedule Information */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">開催スケジュール</h4>
+                  <div className="bg-gradient-to-r from-[#0073e6] to-[#4da3ff] rounded-2xl p-4 text-white mb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="font-bold text-lg">{seminar.scheduleInfo}</span>
+                    </div>
+                    <p className="text-sm opacity-90">月10回の中からご都合の良い日時をお選びください</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 gap-3">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-3 h-3 bg-[#0073e6] rounded-full"></span>
+                        <span className="font-semibold text-gray-900">平日（月〜金）</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {seminar.timeSlots.weekdays.map((slot, idx) => (
+                          <span key={idx} className="px-3 py-1 bg-white border-2 border-[#0073e6] text-[#0073e6] text-sm font-semibold rounded-full">
+                            {slot}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-orange-50 rounded-xl p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="w-3 h-3 bg-[#f59023] rounded-full"></span>
+                        <span className="font-semibold text-gray-900">土日祝日</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {seminar.timeSlots.weekends.map((slot, idx) => (
+                          <span key={idx} className="px-3 py-1 bg-white border-2 border-[#f59023] text-[#f59023] text-sm font-semibold rounded-full">
+                            {slot}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Details */}
                 <div className="space-y-3 pb-6 border-b border-gray-100 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">日時</span>
-                    <span className="text-sm font-semibold text-gray-900">{seminar.schedule}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">時間</span>
+                    <span className="text-sm text-gray-600">所要時間</span>
                     <span className="text-sm font-semibold text-gray-900">{seminar.duration}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">定員</span>
+                    <span className="text-sm text-gray-600">各回定員</span>
                     <span className="text-sm font-semibold text-gray-900">{seminar.capacity}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">月間開催数</span>
+                    <span className="text-sm font-semibold text-[#0073e6]">月10回開催</span>
                   </div>
                 </div>
 
@@ -207,18 +231,18 @@ export default function SeminarSection() {
                   </div>
                 </div>
 
-                {/* Money Back Guarantee */}
+                {/* Quality Assurance */}
                 <div className="text-center text-xs text-gray-500 mb-3">
                   <svg className="w-3 h-3 text-green-600 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                   </svg>
-                  満足保証付き・7日間全額返金対応
+                  東大生による質の高い指導をお約束
                 </div>
 
                 {/* Enrollment Button */}
                 <a
                   href={`/seminar-${seminar.id.replace('ai-', 'ai-')}`}
-                  className="block w-full py-4 bg-[#0073e6] text-white font-semibold rounded-2xl hover:bg-[#0052cc] transition-all duration-300 text-center transform hover:scale-105 shadow-lg"
+                  className="block w-full py-4 bg-[#0073e6] text-white font-semibold rounded-2xl hover:bg-[#0052cc] transition-all duration-300 text-center transform hover:scale-105 shadow-lg btn-hover"
                 >
                   このセミナーに申し込む
                 </a>

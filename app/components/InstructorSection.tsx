@@ -2,46 +2,46 @@
 
 const instructors = [
   {
-    name: '田中 健太',
+    name: '上田 航',
     title: 'AI教育スペシャリスト',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
     background: '元Google Japan',
     experience: 'AI×教育分野で10年',
     specialties: ['AI活用教育', '探究学習設計', 'STEAMプログラム'],
     achievements: [
-      '全国の小学校でAI教育プログラム導入支援',
-      '教育AI活用コンサルタントとして200校以上を支援',
-      '子ども向けAI教育書籍3冊出版'
+      'AI教育分野での豊富な指導経験',
+      '子どもたちの好奇心を育む教育メソッド開発',
+      '個別最適化学習プログラムの設計'
     ],
     philosophy: '「なぜ？」から始まる学びを、AIで無限に広げることができます。子どもたちの好奇心を大切に、一人ひとりの探究心を育んでいきます。',
     seminar: '探究心と好奇心をAIで広げる'
   },
   {
-    name: 'Sarah Johnson',
+    name: '上田 航',
     title: '英語教育コンサルタント',
     image: 'https://images.unsplash.com/photo-1494790108755-2616b612b29c?w=150&h=150&fit=crop&crop=face',
     background: 'TESOL認定講師',
     experience: '英語教育15年、AI活用5年',
     specialties: ['AI英語学習', '発音指導', '英検対策'],
     achievements: [
-      'AI英会話アプリ開発チームでカリキュラム監修',
-      '英検1級合格者を300名以上輩出',
-      '国際教育テクノロジー学会での講演多数'
+      'AI英語学習システムの教育設計',
+      '効果的な英語学習メソッドの開発',
+      '国際的な教育技術研究への参画'
     ],
     philosophy: 'AIと人の温かさを組み合わせることで、本当に"使える英語"が身につきます。試験対策だけでなく、世界とつながる英語力を育てます。',
     seminar: 'AI時代の家庭学習メニュー設計'
   },
   {
-    name: '山田 太郎',
-    title: '東京大学工学部4年',
+    name: '上田 航',
+    title: '東京大学工学部4年・代表',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
-    background: '現役東大生',
+    background: '現役東大生・運営代表',
     experience: 'AI学習法研究3年',
     specialties: ['効率学習法', 'AI活用勉強術', '受験対策'],
     achievements: [
-      '全国統一模試で総合1位獲得',
-      'AI活用で偏差値20アップを実現',
-      '学習効率化メソッドを100名以上に指導'
+      'AI学習システムの効果的活用法を研究',
+      '効率的な学習メソッドの開発と実践',
+      '学生向け学習支援活動の推進'
     ],
     philosophy: '勉強は「時間」ではなく「質」で決まります。AIを味方につけることで、誰でも効率的に成績を上げることができると確信しています。',
     seminar: 'AI×勉強効率化'
@@ -53,11 +53,14 @@ export default function InstructorSection() {
     <section id="instructors" className="py-24 bg-gradient-to-b from-[#eceff1] to-[#f3f8fc]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1.5 bg-red-100 text-red-600 text-sm font-bold rounded-full">東大生が運営</span>
+          </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
             経験豊富な講師陣
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            各分野のスペシャリストが、お子様の学びをサポートします
+            東大生を中心とした各分野のスペシャリストが、お子様の学びをサポートします
           </p>
         </div>
 
@@ -65,7 +68,7 @@ export default function InstructorSection() {
           {instructors.map((instructor, index) => (
             <div 
               key={instructor.name}
-              className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100"
+              className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500"
               style={{
                 animation: `fadeIn 0.6s ease-out ${index * 0.1}s both`
               }}
