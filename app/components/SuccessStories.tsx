@@ -57,17 +57,17 @@ export default function SuccessStories() {
   const [selectedStory, setSelectedStory] = useState(0)
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-blue-50/30">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-green-100 text-[#63ad5d] text-sm font-bold rounded-full mb-4">
-            受講生の成果
+          <span className="inline-block px-4 py-2 bg-blue-50 text-[#0073e6] text-sm font-bold rounded-full mb-4">
+            受講生の声
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-            AIで変わった子どもたちの未来
+            親子のリアルな体験談
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            実際にAI学習を始めた子どもたちの成長ストーリーをご紹介します
+            実際に取り組んでいるご家庭の感想や気づきをご紹介します
           </p>
         </div>
 
@@ -96,35 +96,17 @@ export default function SuccessStories() {
                 </div>
               </div>
 
-              {/* Achievement badge */}
-              <div className="bg-gradient-to-r from-[#0073e6] to-[#4da3ff] text-white rounded-2xl p-4 mb-6">
-                <p className="font-bold text-center">{story.achievement}</p>
-              </div>
-
-              {/* Metrics */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">期間</span>
-                  <span className="font-bold text-[#0073e6]">{story.metrics.duration}</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-sm text-gray-600">Before</div>
-                  <div className="bg-gray-100 rounded-lg p-2 text-sm">{story.metrics.before}</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-sm text-gray-600">After</div>
-                  <div className="bg-green-100 rounded-lg p-2 text-sm font-semibold text-[#63ad5d]">
-                    {story.metrics.after}
-                  </div>
-                </div>
-              </div>
+              {/* Short quote */}
+              <p className="text-sm text-gray-600">
+                「{story.parentComment}」
+              </p>
             </div>
           ))}
         </div>
 
         {/* Detailed story display */}
         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid gap-8">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {stories[selectedStory].name}さんのストーリー
@@ -151,40 +133,7 @@ export default function SuccessStories() {
               </div>
             </div>
 
-            {/* Visual progress representation */}
-            <div className="flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-xl opacity-30"></div>
-                <div className="relative bg-gradient-to-br from-[#0073e6] to-[#4da3ff] rounded-3xl p-8 text-white">
-                  <div className="text-center">
-                    <div className="text-6xl font-black mb-4">
-                      {selectedStory === 0 ? '3ヶ月' : selectedStory === 1 ? '6ヶ月' : '4ヶ月'}
-                    </div>
-                    <div className="text-xl font-bold mb-6">で大きな成果を達成</div>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>個別最適化された学習プラン</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>24時間いつでも学習可能</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>親子で楽しく継続</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Right column removed: keep content simple */}
           </div>
         </div>
 
@@ -194,7 +143,7 @@ export default function SuccessStories() {
             お子様の可能性を、今すぐ広げませんか？
           </p>
           <a
-            href="#seminars"
+            href="/seminars"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#0073e6] to-[#4da3ff] text-white font-bold rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <span>無料体験セミナーに申し込む</span>

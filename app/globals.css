@@ -27,6 +27,12 @@
   --accent-green: #63ad5d;
   --accent-red: #e13a2f;
   
+  /* Pop accents */
+  --pop-pink: #ff6ec7;
+  --pop-purple: #7c3aed;
+  --pop-yellow: #ffd166;
+  --pop-teal: #2dd4bf;
+  
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -52,7 +58,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-jp), -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -226,6 +232,69 @@ html {
 /* Hover effects */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Friendly, approachable additions */
+.bg-soft-dots {
+  background-image: radial-gradient(rgba(0, 115, 230, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #0a84ff 0%, #0073e6 60%, #0052cc 100%);
+  color: #fff;
+  border-radius: 9999px;
+  box-shadow: 0 8px 18px rgba(0, 115, 230, 0.25);
+}
+.btn-primary:hover { filter: brightness(0.98); box-shadow: 0 10px 22px rgba(0,115,230,0.3); }
+
+.badge-free {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  font-weight: 800;
+  font-size: 12px;
+  color: #0052cc;
+  background: #d6e8ff;
+  border: 1px solid #bcd9ff;
+  border-radius: 9999px;
+}
+
+/* Pop styling helpers */
+.pop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #0b3a7e;
+  background: linear-gradient(90deg, #e0f2ff, #fff0f6);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.pop-chip i { font-style: normal; }
+
+.pop-underline {
+  background: linear-gradient(120deg, rgba(0,115,230,0.15), rgba(255,214,102,0.25));
+  display: inline;
+  box-decoration-break: clone;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+.pop-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.pop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.topline-gradient {
+  background: linear-gradient(90deg, var(--pop-pink), var(--pop-purple), var(--primary));
 }
 
 .hover-lift:hover {

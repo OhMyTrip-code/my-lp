@@ -50,7 +50,7 @@ const instructors = [
 
 export default function InstructorSection() {
   return (
-    <section id="instructors" className="py-24 bg-gradient-to-b from-[#eceff1] to-[#f3f8fc]">
+    <section id="instructors" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6">

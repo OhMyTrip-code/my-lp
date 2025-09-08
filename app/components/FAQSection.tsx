@@ -41,7 +41,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#f3f8fc] to-[#f8f9fa]">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
