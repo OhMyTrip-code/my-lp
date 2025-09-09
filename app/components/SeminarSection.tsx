@@ -8,7 +8,7 @@ const seminars = [
     title: '保護者向け：ChatGPTの始め方',
     subtitle: '保護者さま限定・無料セミナー',
     description: 'まずは保護者さまご自身がChatGPTの便利さと安全な使い方を体感。家庭での活用設計まで短時間で掴めます。',
-    duration: '60分',
+    duration: '90分',
     price: '無料',
     features: [
       '今日から使えるプロンプトの基本',

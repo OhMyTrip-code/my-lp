@@ -1,235 +1,540 @@
-import SeminarSection from './components/SeminarSection'
-import FAQSection from './components/FAQSection'
-import AgeTabSection from './components/AgeTabSection'
-import PhotoCollage from './components/PhotoCollage'
-import SuccessStories from './components/SuccessStories'
+'use client'
+
+import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Home() {
+  const courses = [
+    {
+      title: '保護者向けChatGPTセミナー',
+      subtitle: '無料セミナー',
+      duration: '90分',
+      price: '無料',
+      badge: '完全無料',
+      description: 'まずは保護者さまがChatGPTの基礎と安全な使い方を学びます',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070',
+    },
+    {
+      title: '英語×AI活用セミナー',
+      subtitle: '親子向けセミナー',
+      duration: '90分',
+      price: '¥5,000',
+      badge: '人気',
+      description: 'AIを使った効果的な英語学習方法を親子で学びます',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070',
+    },
+    {
+      title: '探究×AI活用セミナー',
+      subtitle: '親子向けセミナー',
+      duration: '90分',
+      price: '¥5,000',
+      badge: 'おすすめ',
+      description: '探究学習にAIを活用し、深い学びを親子で実現します',
+      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070',
+    },
+  ]
+
   return (
     <>
-      {/* Header moved to layout */}
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <a href="/" className="flex items-center">
+                <Image
+                  src="/brand/logo.png"
+                  alt="Shindo for Kids"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                />
+                <span className="font-bold text-base sm:text-lg">Shindo for Kids</span>
+              </a>
+            </div>
+            <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+              <a href="#courses" className="text-gray-700 hover:text-black transition text-sm lg:text-base">コース</a>
+              <a href="#about" className="text-gray-700 hover:text-black transition text-sm lg:text-base">運営について</a>
+              <a href="#process" className="text-gray-700 hover:text-black transition text-sm lg:text-base">受講の流れ</a>
+              <a href="#faq" className="text-gray-700 hover:text-black transition text-sm lg:text-base">FAQ</a>
+              <a 
+                href="/seminar-parents-chatgpt" 
+                className="bg-black text-white px-3 py-2 lg:px-4 rounded-lg hover:bg-gray-800 transition text-sm lg:text-base"
+              >
+                無料セミナー申込
+              </a>
+            </nav>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <a 
+                href="/seminar-parents-chatgpt"
+                className="bg-black text-white px-3 py-2 rounded-lg text-sm font-semibold"
+              >
+                申込
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
 
-      <main className="pt-28">
-        {/* Hero - playful, orange-first like Tech Kids School */}
-        <section className="relative overflow-hidden bg-white bg-soft-dots">
-
-          <div className="max-w-7xl mx-auto px-6 py-16 lg:py-28">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Copy */}
-              <div>
-                <span className="inline-block mb-3 px-4 py-1.5 rounded-full bg-blue-100 text-[#0073e6] font-bold text-sm">親子で学ぶAI教育</span>
-                <a href="/seminar-parents-chatgpt" className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-blue-50 text-[#0073e6] font-semibold text-sm border border-blue-100 hover:bg-blue-100">
-                  <span className="px-2 py-0.5 text-xs font-bold rounded bg-blue-200 text-[#0052cc]">今だけ無料！</span>
-                  保護者向け：ChatGPTの始め方 を開催中
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+      <main className="pt-16">
+        {/* Hero Section */}
+        <section className="relative bg-black text-white overflow-hidden min-h-screen flex items-center">
+          <div className="absolute inset-0">
+            <Image
+              src="/brand/ホームページ.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-40"
+            />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 w-full">
+            <div className="max-w-4xl text-left">
+              <div className="inline-block mb-4">
+                <span className="bg-yellow-400 text-black text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                  期間限定・無料体験実施中
+                </span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                子どもの「好き」を
+                <br />
+                AIで伸ばす。
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 leading-relaxed">
+                親子で学ぶAI教育プログラム。
+                <br className="hidden sm:block" />
+                まずは保護者さまから、安全で効果的な活用法を。
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start justify-start">
+                <a 
+                  href="/seminar-parents-chatgpt"
+                  className="w-full sm:w-auto inline-block bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-gray-100 transition text-center"
+                >
+                  無料セミナーに申し込む
                 </a>
-                <h1 className="text-4xl lg:text-6xl font-black leading-tight text-gray-900 mb-6">
-                  子どもの「好き」を
-                  <span className="block text-[#0073e6] pop-underline">AIで伸ばす。</span>
-                </h1>
-                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-8">
-                  まずは保護者さまがChatGPTの価値を“体感”。その上で、
-                  ご家庭で安全に続けられるAI活用の一歩を一緒に設計します。
+                <a 
+                  href="#courses"
+                  className="w-full sm:w-auto inline-block border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-black transition text-center"
+                >
+                  コース一覧を見る
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="bg-gray-50 py-8 sm:py-12 border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+              <div className="p-2">
+                <div className="text-2xl sm:text-3xl font-bold text-black">200+</div>
+                <div className="text-gray-600 text-xs sm:text-sm mt-1">受講者数</div>
+              </div>
+              <div className="p-2">
+                <div className="text-2xl sm:text-3xl font-bold text-black">98%</div>
+                <div className="text-gray-600 text-xs sm:text-sm mt-1">満足度</div>
+              </div>
+              <div className="p-2">
+                <div className="text-2xl sm:text-3xl font-bold text-black">東大生</div>
+                <div className="text-gray-600 text-xs sm:text-sm mt-1">運営チーム</div>
+              </div>
+              <div className="p-2">
+                <div className="text-2xl sm:text-3xl font-bold text-black">毎日</div>
+                <div className="text-gray-600 text-xs sm:text-sm mt-1">開催中</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Courses Section */}
+        <section id="courses" className="py-12 sm:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">コース一覧</h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600">保護者向け無料セミナーから始める親子のAI学習</p>
+            </div>
+
+            {/* Course Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              {courses.map((course, index) => (
+                <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition duration-300"
+                    />
+                    {course.badge && (
+                      <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                        <span className="bg-red-500 text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full">
+                          {course.badge}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-4 sm:p-6">
+                    <div className="text-xs sm:text-sm text-gray-500 mb-2">{course.subtitle}</div>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 leading-tight">{course.title}</h3>
+                    <p className="text-gray-600 mb-3 sm:mb-4 text-sm leading-relaxed">{course.description}</p>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                      <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500">
+                        <span className="flex items-center gap-1">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {course.duration}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {course.price}
+                        </span>
+                      </div>
+                    </div>
+                    <a 
+                      href={
+                        course.title === '保護者向けChatGPTセミナー' ? '/seminar-parents-chatgpt' :
+                        course.title === '英語×AI活用セミナー' ? '/seminar-english-ai' :
+                        course.title === '探究×AI活用セミナー' ? '/seminar-research-ai' :
+                        '/seminar-parents-chatgpt'
+                      }
+                      className="block w-full text-center bg-black text-white py-2.5 sm:py-3 rounded-lg font-medium hover:bg-gray-800 transition text-sm sm:text-base"
+                    >
+                      詳細を見る
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">なぜ今、AI教育なのか</h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  AIは既に私たちの生活に深く浸透し、子どもたちが大人になる頃には、
+                  AIとの共存が当たり前の時代になります。
                 </p>
+                <p className="text-lg text-gray-700 mb-6">
+                  しかし、多くの保護者さまは「AIは便利そうだけど、子どもに使わせるのは不安」
+                  「どう活用すればいいかわからない」という悩みを抱えています。
+                </p>
+                <p className="text-lg text-gray-700 mb-8">
+                  私たちは、東大生を中心とした運営チームが、安全で効果的なAI活用法を
+                  親子で学べるプログラムを提供しています。
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-black mb-1">3年間</div>
+                    <div className="text-sm text-gray-600">大手塾での指導経験</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-black mb-1">IB取得</div>
+                    <div className="text-sm text-gray-600">国際バカロレア</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070"
+                  alt="Team"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="/seminar-parents-chatgpt"
-                    className="inline-flex items-center justify-center px-8 py-4 btn-primary font-bold transition-all duration-300"
-                  >
-                    今だけ無料！保護者向けセミナーに参加
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        {/* Process Section */}
+        <section id="process" className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">受講の流れ</h2>
+              <p className="text-xl text-gray-600">簡単3ステップで始められます</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-8">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">
+                      1
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold mb-2">無料セミナーに参加</h3>
+                    <p className="text-gray-600">
+                      まずは保護者向けの無料セミナーで、ChatGPTの基礎と安全な使い方を学びます。
+                      オンラインで90分、お気軽にご参加いただけます。
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">
+                      2
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold mb-2">コース選択・申込</h3>
+                    <p className="text-gray-600">
+                      お子様の年齢や目的に合わせて最適なコースを選択。
+                      体験後、継続される場合のみお申し込みください。
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">
+                      3
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold mb-2">家庭学習スタート</h3>
+                    <p className="text-gray-600">
+                      セミナーで学んだ内容を家庭で実践。
+                      専用のサポートで、継続的な学習をバックアップします。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">受講者の声</h2>
+              <p className="text-xl text-gray-400">実際に体験された方々の感想</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-gray-900 p-6 rounded-2xl">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
-                  </a>
-                  <a
-                    href="/seminars"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#0073e6] font-bold rounded-full border-2 border-[#0073e6] hover:bg-blue-50 transition-all duration-300"
-                  >
-                    開催予定セミナーを見る
-                  </a>
-                </div>
-
-                {/* Pop chips */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                  <span className="pop-chip"><i>🎉</i> 今だけ無料</span>
-                  <span className="pop-chip"><i>👨‍👩‍👧</i> 親子で安心の設計</span>
-                  <span className="pop-chip"><i>💻</i> オンラインOK</span>
-                </div>
-
-                {/* Points */}
-                <div className="mt-8 grid grid-cols-3 gap-3">
-                  {[
-                    { label: '毎日開催', color: 'from-[#0073e6] to-[#4da3ff]' },
-                    { label: '親子参加', color: 'from-[#63ad5d] to-[#7dc077]' },
-                    { label: '東大生運営', color: 'from-[#0073e6] to-[#4da3ff]' },
-                  ].map((p) => (
-                    <div key={p.label} className={`rounded-2xl p-3 text-center bg-gradient-to-br ${p.color} text-white font-bold shadow-sm`}>{p.label}</div>
                   ))}
                 </div>
-              </div>
-
-              {/* Visual: photo collage */}
-              <PhotoCollage />
-            </div>
-          </div>
-
-          {/* wave divider */}
-          <svg className="block w-full" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-            <path fill="#fff" d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,16C1200,11,1320,21,1380,26.7L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" />
-          </svg>
-        </section>
-
-        {/* Trust signals removed per request */}
-
-        {/* About operators */}
-        <section id="about" className="bg-white">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">運営について</h2>
-            <p className="text-gray-700 mb-6">本プログラムは、大学生チームにより運営しています。</p>
-
-            {/* Universities */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              {['東京大学','一橋大学','上智大学'].map((u) => (
-                <span key={u} className="px-3 py-1.5 rounded-full bg-blue-50 text-[#0073e6] text-sm font-semibold border border-blue-100">{u} の学生</span>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
-                <h3 className="font-bold text-lg text-gray-900 mb-4">運営メンバーの特徴</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>大手塾で3年間、バイリンガル講師として英語を指導</li>
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>小学生の指導実績は200名以上</li>
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>国際バカロレア（IB）を取得済み</li>
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>バイブコーディングの指導も可能</li>
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-gray-100 bg-gray-50 p-8">
-                <h3 className="font-bold text-lg text-gray-900 mb-4">保護者さまへのお約束</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>安全で健全なAI活用ルールを徹底</li>
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>ご家庭のデバイス・環境で継続できる設計</li>
-                  <li className="flex items-start"><span className="text-[#0073e6] mr-2 mt-0.5">✓</span>英語・探究・効率学習など目的別に最適化</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Reasons for parents */}
-        <section className="bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">保護者さまに選ばれる理由</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[{
-                title:'家庭で続く学習設計',desc:'スマホ/タブレットで無理なく続く“家庭運用”を設計。目標・時間配分・ルーティンまで伴走します。'
-              },{
-                title:'安全なAI活用',desc:'年齢に応じたルールとリテラシーを丁寧に指導。保護者向けの設定ガイドも提供。'
-              },{
-                title:'成果に直結',desc:'英検・定期テスト・探究発表など、具体的ゴールに合わせて最短で成果を出します。'
-              }].map((item, i)=> (
-                <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-                  <div className="w-10 h-10 rounded-full bg-blue-50 text-[#0073e6] font-bold flex items-center justify-center mb-4">{i+1}</div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <p className="mb-4 text-gray-300">
+                  「ChatGPTの使い方が具体的にわかり、子どもの勉強に活かせるイメージが湧きました。
+                  安全な使い方も教えてもらえて安心です。」
+                </p>
+                <div className="text-sm">
+                  <div className="font-bold">Aさん</div>
+                  <div className="text-gray-500">小学5年生の保護者</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How it works */}
-        <section className="bg-white">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">無料体験の流れ（60分）</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {title:'ヒアリング',desc:'現在の学習状況とお悩みを確認し、目標を明確化'},
-                {title:'AI学習体験',desc:'実際のツールで短時間でも成果を体感'},
-                {title:'家庭運用プラン',desc:'家庭で続ける学習メニューと初週のToDoを提案'}
-              ].map((step, i)=> (
-                <div key={i} className="rounded-2xl border border-gray-100 p-6">
-                  <div className="text-[#0073e6] font-black text-3xl mb-2">{i+1}</div>
-                  <div className="font-bold text-gray-900 mb-1">{step.title}</div>
-                  <div className="text-gray-600 text-sm">{step.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing summary */}
-        <section className="bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">料金・日程</h2>
-                <ul className="text-gray-700 space-y-2">
-                  <li>・体験会：無料（60分／オンライン）</li>
-                  <li>・本セミナー：各回 ¥5,000（90〜120分）</li>
-                  <li>・開催日程：平日夜・土日（詳細は下部「セミナー」へ）</li>
-                </ul>
-                <p className="text-xs text-gray-500 mt-3">価格は税込表示。内容は変更になる場合があります。</p>
               </div>
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-sm text-gray-600">初回限定</div>
-                  <div className="text-xs font-semibold text-[#0073e6]">オンライン開催</div>
+
+              <div className="bg-gray-900 p-6 rounded-2xl">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
                 </div>
-                <div className="text-3xl font-black text-gray-900">無料体験 0円</div>
-                <p className="text-gray-600 mt-2">ご家庭のデバイスで、その日から続けられる仕組みづくりを体験。</p>
-                <a href="/seminars" className="mt-6 inline-flex items-center px-6 py-3 bg-[#0073e6] text-white font-bold rounded-full hover:bg-[#0052cc]">空き枠を確認する</a>
+                <p className="mb-4 text-gray-300">
+                  「英検対策でAIを活用する方法を教えてもらい、
+                  子どもの学習効率が格段に上がりました。親子で楽しく学べています。」
+                </p>
+                <div className="text-sm">
+                  <div className="font-bold">Bさん</div>
+                  <div className="text-gray-500">中学2年生の保護者</div>
+                </div>
+              </div>
+
+              <div className="bg-gray-900 p-6 rounded-2xl">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="mb-4 text-gray-300">
+                  「運営の学生さんが丁寧で、子どもも楽しく参加できました。
+                  家庭での実践方法まで具体的に教えてもらえたのが良かったです。」
+                </p>
+                <div className="text-sm">
+                  <div className="font-bold">Cさん</div>
+                  <div className="text-gray-500">小学3年生の保護者</div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Other sections moved to dedicated pages */}
+        {/* FAQ */}
+        <section id="faq" className="py-20">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">よくある質問</h2>
+            </div>
+
+            <div className="space-y-4">
+              <details className="border border-gray-200 rounded-lg p-6 cursor-pointer group">
+                <summary className="flex items-center justify-between font-semibold text-lg">
+                  <span>ChatGPTを使ったことがなくても大丈夫ですか？</span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600">
+                  はい、全く問題ありません。初めての方でも理解できるよう、基礎から丁寧に説明します。
+                  実際に手を動かしながら学べるので、セミナー終了時には基本的な使い方をマスターできます。
+                </p>
+              </details>
+
+              <details className="border border-gray-200 rounded-lg p-6 cursor-pointer group">
+                <summary className="flex items-center justify-between font-semibold text-lg">
+                  <span>子どもは何歳から参加できますか？</span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600">
+                  小学3年生から高校生まで対応しています。
+                  年齢に応じた内容と使い方をご提案しますので、お子様の学年をお知らせください。
+                </p>
+              </details>
+
+              <details className="border border-gray-200 rounded-lg p-6 cursor-pointer group">
+                <summary className="flex items-center justify-between font-semibold text-lg">
+                  <span>オンラインでの参加方法は？</span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600">
+                  Zoomを使用して実施します。お申し込み後、参加用のURLをメールでお送りします。
+                  スマートフォンやタブレット、PCから簡単に参加できます。
+                </p>
+              </details>
+
+              <details className="border border-gray-200 rounded-lg p-6 cursor-pointer group">
+                <summary className="flex items-center justify-between font-semibold text-lg">
+                  <span>受講料の支払い方法は？</span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600">
+                  クレジットカード、銀行振込に対応しています。
+                  無料セミナーは完全無料ですので、まずはお気軽にご参加ください。
+                </p>
+              </details>
+
+              <details className="border border-gray-200 rounded-lg p-6 cursor-pointer group">
+                <summary className="flex items-center justify-between font-semibold text-lg">
+                  <span>セミナー後のサポートはありますか？</span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600">
+                  はい、セミナー後も継続的なサポートを提供しています。
+                  LINEでの質問対応や、定期的なフォローアップセミナーもご用意しています。
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              今こそ、AI教育を始めるとき
+            </h2>
+            <p className="text-xl text-gray-600 mb-10">
+              子どもの可能性を最大限に引き出す、新しい学びの形を体験してください
+            </p>
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <div className="mb-6">
+                <span className="bg-yellow-400 text-black text-sm font-bold px-4 py-2 rounded-full">
+                  期間限定・今だけ無料
+                </span>
+              </div>
+              <h3 className="text-3xl font-bold mb-4">親子で学ぶAI活用セミナー</h3>
+              <p className="text-gray-600 mb-8">
+                3つの無料セミナーから選んで、AI活用法を90分で完全マスター
+              </p>
+              <a 
+                href="/seminar-parents-chatgpt"
+                className="inline-block bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition"
+              >
+                無料セミナーに申し込む
+              </a>
+              <p className="text-sm text-gray-500 mt-4">
+                ※クレジットカード不要・完全無料
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
-      {/* Site Footer */}
-      <footer className="bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0073e6] to-[#4da3ff] flex items-center justify-center">
-              <span className="text-white text-xs font-black">S</span>
+      {/* Footer */}
+      <footer className="bg-black text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center mb-4">
+                <Image
+                  src="/brand/logo.png"
+                  alt="Shindo for Kids"
+                  width={32}
+                  height={32}
+                  className="mr-2 brightness-0 invert"
+                />
+                <span className="font-bold text-lg">Shindo for Kids</span>
+              </div>
+              <p className="text-gray-400 text-sm">
+                AIで子どもの可能性を広げる
+              </p>
             </div>
-            <span className="text-sm text-gray-600">© {new Date().getFullYear()} Shindo for Kids</span>
+            <div>
+              <h4 className="font-semibold mb-4">コース</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="#" className="hover:text-white transition">小学生向け</a></li>
+                <li><a href="#" className="hover:text-white transition">中学生向け</a></li>
+                <li><a href="#" className="hover:text-white transition">高校生向け</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">サポート</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="#faq" className="hover:text-white transition">よくある質問</a></li>
+                <li><a href="#" className="hover:text-white transition">お問い合わせ</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">会社情報</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="#about" className="hover:text-white transition">運営について</a></li>
+                <li><a href="#" className="hover:text-white transition">プライバシーポリシー</a></li>
+              </ul>
+            </div>
           </div>
-          <nav className="flex items-center gap-6 text-sm">
-            <a href="/seminars" className="text-gray-600 hover:text-[#0073e6]">開催予定セミナー</a>
-            <a href="/about" className="text-gray-600 hover:text-[#0073e6]">運営について</a>
-            <a href="/voice" className="text-gray-600 hover:text-[#0073e6]">過去の受講者のコメント</a>
-            <a href="/faq" className="text-gray-600 hover:text-[#0073e6]">よくある質問</a>
-          </nav>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+            <p>© 2024 Shindo for Kids. All rights reserved.</p>
+          </div>
         </div>
       </footer>
-
-      {/* Fixed Footer CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-100 p-4 z-40">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row gap-3 items-center justify-center">
-          <div className="flex items-center gap-2">
-            <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-blue-100 text-[#0073e6]">今だけ無料！</span>
-            <p className="text-sm font-medium text-gray-700">保護者向け：ChatGPTの始め方（無料）を開催中</p>
-          </div>
-          <div className="flex gap-3">
-            <a
-              href="/seminar-parents-chatgpt"
-              className="px-6 py-2.5 bg-[#0073e6] text-white font-semibold rounded-full hover:bg-[#0052cc] transition-all duration-300 shadow-sm hover:shadow-md text-sm"
-            >
-              <span className="flex items-center gap-2">
-                <span>無料セミナーに参加する</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
     </>
-  );
+  )
 }

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function SeminarDetailPage() {
+export default function ResearchAISeminarPage() {
   const [activeTab, setActiveTab] = useState('overview')
   const [showDateTimeModal, setShowDateTimeModal] = useState(false)
   const [showConfirmModal, setShowConfirmModal] = useState(false)
@@ -156,8 +156,8 @@ export default function SeminarDetailPage() {
         {/* Hero Section with Video/Image */}
         <section className="relative h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[500px] bg-black">
           <Image
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070"
-            alt="セミナー風景"
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070"
+            alt="探究学習風景"
             fill
             className="object-cover opacity-60"
           />
@@ -165,18 +165,18 @@ export default function SeminarDetailPage() {
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 lg:p-12">
             <div className="max-w-7xl mx-auto">
               <div className="inline-block mb-3 sm:mb-4">
-                <span className="bg-yellow-400 text-black text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
-                  期間限定無料
+                <span className="bg-purple-400 text-black text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
+                  おすすめ
                 </span>
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-                保護者向け<br />
-                ChatGPT活用セミナー
+                探究×AI活用<br />
+                セミナー
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6 max-w-3xl leading-relaxed">
-                子どもの学習にAIを安全に活用する方法を90分で完全マスター。
+                AIを使った探究学習の方法を90分で完全マスター。
                 <br className="hidden sm:block" />
-                まずは保護者さまが体験し、家庭での実践方法を学びます。
+                親子で学び、深い探究活動を実践する方法を身につけます。
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a 
@@ -276,47 +276,46 @@ export default function SeminarDetailPage() {
                     <h2 className="text-3xl font-bold mb-6">セミナー概要</h2>
                     <div className="prose prose-lg max-w-none">
                       <p className="text-gray-700 mb-6">
-                        ChatGPTをはじめとするAI技術は、子どもたちの学習に革命をもたらす可能性を秘めています。
-                        しかし、「どう使えばいいの？」「安全性は大丈夫？」という不安を持つ保護者さまも多いはずです。
+                        探究学習は、子どもたちが自ら問いを立て、調べ、考え、発表する学習方法です。
+                        AIの活用により、この探究活動がより深く、効率的に行えるようになりました。
                       </p>
                       <p className="text-gray-700 mb-6">
-                        本セミナーでは、AI教育の専門家が、ChatGPTの基礎から実践的な活用方法まで、
-                        分かりやすく丁寧に解説します。実際に手を動かしながら学べるワークショップ形式で、
-                        90分後には自信を持って家庭でAIを活用できるようになります。
+                        本セミナーでは、親子でAIを活用した探究学習の方法を身につけます。
+                        情報収集、仮説検証、創造的思考など、探究のあらゆる場面でAIを効果的に使う方法を90分で完全マスターします。
                       </p>
                       
-                      <div className="bg-blue-50 rounded-xl p-6 mb-8">
+                      <div className="bg-purple-50 rounded-xl p-6 mb-8">
                         <h3 className="text-xl font-bold mb-4">このセミナーで得られること</h3>
                         <ul className="space-y-3">
                           <li className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>ChatGPTの基本的な使い方と仕組みの理解</span>
+                            <span>AIを使った効果的な情報収集・整理の方法</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>子どもの年齢に応じた安全な利用設定方法</span>
+                            <span>研究テーマ設定とリサーチクエスチョンの作り方</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>宿題サポート、英語学習、探究学習での実践的な活用法</span>
+                            <span>データ分析・可視化でのAI活用法</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>家庭での学習ルーティンへの組み込み方</span>
+                            <span>レポート・プレゼンテーション作成のAI支援活用</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>AI時代に必要な子どものリテラシー教育</span>
+                            <span>創造的アイデア発想でのAI活用テクニック</span>
                           </li>
                         </ul>
                       </div>
@@ -331,12 +330,12 @@ export default function SeminarDetailPage() {
                           <p className="text-gray-700">90分（質疑応答含む）</p>
                         </div>
                         <div className="bg-gray-50 rounded-xl p-6">
-                          <h4 className="font-bold mb-3">定員</h4>
-                          <p className="text-gray-700">各回10名様限定</p>
+                          <h4 className="font-bold mb-3">対象</h4>
+                          <p className="text-gray-700">親子参加歓迎</p>
                         </div>
                         <div className="bg-gray-50 rounded-xl p-6">
                           <h4 className="font-bold mb-3">参加費</h4>
-                          <p className="text-gray-700"><span className="text-red-600 font-bold">無料</span>（期間限定）</p>
+                          <p className="text-gray-700"><span className="text-purple-600 font-bold">¥5,000</span></p>
                         </div>
                       </div>
                     </div>
@@ -356,11 +355,11 @@ export default function SeminarDetailPage() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold mb-2">イントロダクション（10分）</h3>
+                            <h3 className="text-xl font-bold mb-2">探究学習とAIの可能性（15分）</h3>
                             <ul className="text-gray-700 space-y-1">
-                              <li>・AI時代の教育の変化</li>
-                              <li>・ChatGPTとは何か？</li>
-                              <li>・なぜ今、AI教育が必要なのか</li>
+                              <li>・現代の探究学習とAIの関係</li>
+                              <li>・AI活用で広がる探究の可能性</li>
+                              <li>・成功事例の紹介</li>
                             </ul>
                           </div>
                         </div>
@@ -374,12 +373,12 @@ export default function SeminarDetailPage() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold mb-2">ChatGPT基礎講座（15分）</h3>
+                            <h3 className="text-xl font-bold mb-2">テーマ設定・リサーチ実践（25分）</h3>
                             <ul className="text-gray-700 space-y-1">
-                              <li>・アカウント作成方法</li>
-                              <li>・基本的な使い方と操作方法</li>
-                              <li>・効果的なプロンプト（質問）の作り方</li>
-                              <li>・無料版と有料版の違い</li>
+                              <li>・AIを使った研究テーマの発見方法</li>
+                              <li>・効果的なリサーチクエスチョンの作り方</li>
+                              <li>・情報収集・整理の効率化</li>
+                              <li>・親子で取り組む探究プロジェクト設計</li>
                             </ul>
                           </div>
                         </div>
@@ -393,12 +392,12 @@ export default function SeminarDetailPage() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold mb-2">教育活用実践（20分）</h3>
+                            <h3 className="text-xl font-bold mb-2">データ分析・検証活用（25分）</h3>
                             <ul className="text-gray-700 space-y-1">
-                              <li>・宿題サポートでの活用例</li>
-                              <li>・英語学習での効果的な使い方</li>
-                              <li>・探究学習・自由研究への応用</li>
-                              <li>・創造的な学習活動の提案</li>
+                              <li>・AIによるデータ分析の基礎</li>
+                              <li>・仮説検証の効果的な進め方</li>
+                              <li>・可視化ツールの活用法</li>
+                              <li>・科学的思考の育み方</li>
                             </ul>
                           </div>
                         </div>
@@ -412,12 +411,11 @@ export default function SeminarDetailPage() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold mb-2">安全設定と家庭ルール（10分）</h3>
+                            <h3 className="text-xl font-bold mb-2">成果発表・創造活動（15分）</h3>
                             <ul className="text-gray-700 space-y-1">
-                              <li>・年齢別の利用ルール設定</li>
-                              <li>・プライバシー保護の方法</li>
-                              <li>・適切な利用時間の管理</li>
-                              <li>・保護者の関わり方</li>
+                              <li>・AIを活用したレポート作成</li>
+                              <li>・効果的なプレゼンテーション作成</li>
+                              <li>・創造的なアイデア発想法</li>
                             </ul>
                           </div>
                         </div>
@@ -431,11 +429,11 @@ export default function SeminarDetailPage() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold mb-2">Q&A・まとめ（5分）</h3>
+                            <h3 className="text-xl font-bold mb-2">Q&A・継続のコツ（10分）</h3>
                             <ul className="text-gray-700 space-y-1">
                               <li>・参加者からの質問に回答</li>
-                              <li>・今日から始められるアクションプラン</li>
-                              <li>・継続サポートのご案内</li>
+                              <li>・家庭での探究活動継続方法</li>
+                              <li>・おすすめリソース・ツールの紹介</li>
                             </ul>
                           </div>
                         </div>
@@ -444,29 +442,33 @@ export default function SeminarDetailPage() {
                   </div>
                 )}
 
-                {/* Other tabs content similar to original... */}
+                {/* Target */}
                 {activeTab === 'target' && (
                   <div id="target">
                     <h2 className="text-3xl font-bold mb-6">対象者</h2>
                     <div className="space-y-8">
-                      <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded">
-                        <h3 className="text-xl font-bold mb-3 text-green-800">こんな方におすすめ</h3>
+                      <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded">
+                        <h3 className="text-xl font-bold mb-3 text-purple-800">こんな方におすすめ</h3>
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 mt-0.5">✓</span>
-                            <span>小学生〜高校生のお子様を持つ保護者さま</span>
+                            <span className="text-purple-600 mt-0.5">✓</span>
+                            <span>お子様の探究心・好奇心を伸ばしたい保護者さま</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 mt-0.5">✓</span>
-                            <span>ChatGPTを使ったことがない、または使い始めたばかりの方</span>
+                            <span className="text-purple-600 mt-0.5">✓</span>
+                            <span>自由研究・調べ学習をサポートしたい方</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 mt-0.5">✓</span>
-                            <span>子どもの学習効率を上げたいと考えている方</span>
+                            <span className="text-purple-600 mt-0.5">✓</span>
+                            <span>AI活用で学習を深めたいと考えている方</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 mt-0.5">✓</span>
-                            <span>AIを安全に使わせたいが、方法がわからない方</span>
+                            <span className="text-purple-600 mt-0.5">✓</span>
+                            <span>親子で探究活動に取り組みたい方</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-purple-600 mt-0.5">✓</span>
+                            <span>創造的思考力を育てたい方</span>
                           </li>
                         </ul>
                       </div>
@@ -474,6 +476,7 @@ export default function SeminarDetailPage() {
                   </div>
                 )}
 
+                {/* Schedule */}
                 {activeTab === 'schedule' && (
                   <div id="schedule">
                     <h2 className="text-3xl font-bold mb-6">開催日程</h2>
@@ -497,7 +500,6 @@ export default function SeminarDetailPage() {
                         
                         {/* カレンダー本体 */}
                         <div className="grid grid-cols-7 gap-1">
-                          {/* 9月のカレンダーを生成 */}
                           {(() => {
                             const calendar = []
                             const today = new Date()
@@ -638,6 +640,7 @@ export default function SeminarDetailPage() {
                   </div>
                 )}
 
+                {/* Instructor */}
                 {activeTab === 'instructor' && (
                   <div id="instructor">
                     <h2 className="text-3xl font-bold mb-6">講師紹介</h2>
@@ -660,10 +663,11 @@ export default function SeminarDetailPage() {
                             <div>
                               <h4 className="font-bold mb-2">経歴</h4>
                               <ul className="text-gray-700 space-y-1">
-                                <li>・大手塾で3年間、バイリンガル講師として英語を指導</li>
-                                <li>・小学生の指導実績200名以上</li>
+                                <li>・大手塾で3年間の指導経験</li>
+                                <li>・探究学習プログラムの開発・運営</li>
+                                <li>・小学生〜高校生の指導実績300名以上</li>
                                 <li>・国際バカロレア（IB）ディプロマ取得</li>
-                                <li>・AI教育プログラムの開発・運営</li>
+                                <li>・AI×教育分野での研究活動</li>
                               </ul>
                             </div>
                           </div>
@@ -673,6 +677,7 @@ export default function SeminarDetailPage() {
                   </div>
                 )}
 
+                {/* Reviews */}
                 {activeTab === 'reviews' && (
                   <div id="reviews">
                     <h2 className="text-3xl font-bold mb-6">受講者の声</h2>
@@ -686,14 +691,35 @@ export default function SeminarDetailPage() {
                           ))}
                         </div>
                         <p className="text-gray-700 mb-4">
-                          「AIは難しいものだと思っていましたが、講師の方の説明がとても分かりやすく、
-                          すぐに理解できました。子どもの宿題を見る時に早速活用しています。」
+                          「AIを使った探究学習がこれほど効果的だとは知りませんでした。
+                          子どもの自由研究のクオリティが格段に上がり、学習への意欲も高まりました。」
                         </p>
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                           <div>
-                            <p className="font-semibold">Aさん</p>
-                            <p className="text-sm text-gray-600">40代・小学4年生の母</p>
+                            <p className="font-semibold">Dさん</p>
+                            <p className="text-sm text-gray-600">30代・小学5年生の母</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white border border-gray-200 rounded-xl p-6">
+                        <div className="flex gap-1 mb-3">
+                          {[...Array(5)].map((_, i) => (
+                            <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                          ))}
+                        </div>
+                        <p className="text-gray-700 mb-4">
+                          「探究活動でのAI活用法が具体的にわかり、
+                          親子で楽しく深い学びができるようになりました。創造的な発想力も身についたと思います。」
+                        </p>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                          <div>
+                            <p className="font-semibold">Eさん</p>
+                            <p className="text-sm text-gray-600">40代・中学2年生の父</p>
                           </div>
                         </div>
                       </div>
@@ -708,8 +734,8 @@ export default function SeminarDetailPage() {
                   {/* Application Form */}
                   <div id="apply" className="bg-white border border-gray-200 rounded-xl shadow-lg p-4 sm:p-6 mb-6">
                     <div className="text-center mb-4">
-                      <span className="bg-green-100 text-green-700 text-sm font-bold px-4 py-2 rounded-full">
-                        今だけ完全無料！
+                      <span className="bg-purple-100 text-purple-700 text-sm font-bold px-4 py-2 rounded-full">
+                        おすすめセミナー
                       </span>
                     </div>
                     <h3 className="text-xl font-bold mb-4 text-center">セミナー申込</h3>
@@ -719,8 +745,7 @@ export default function SeminarDetailPage() {
                         <div className="flex items-center justify-between py-3 border-b border-gray-100">
                           <span className="text-gray-600">参加費</span>
                           <div className="text-right">
-                            <div className="text-xs text-gray-400 line-through">通常 ¥5,000</div>
-                            <div className="text-2xl font-bold text-green-600">完全無料</div>
+                            <div className="text-2xl font-bold text-purple-600">¥5,000</div>
                           </div>
                         </div>
                         <div className="flex items-center justify-between py-3 border-b border-gray-100">
@@ -734,18 +759,17 @@ export default function SeminarDetailPage() {
                       </div>
                     </div>
 
-
                     {/* 選択された日程表示 */}
                     {formData.preferredDate && formData.preferredTime && (
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-                        <div className="text-sm font-semibold text-green-800 mb-1">選択された日程</div>
-                        <div className="text-green-700">
+                      <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-4">
+                        <div className="text-sm font-semibold text-purple-800 mb-1">選択された日程</div>
+                        <div className="text-purple-700">
                           {formData.preferredDate} {formData.preferredTime}
                         </div>
                         <button 
                           type="button"
                           onClick={() => setShowDateTimeModal(true)}
-                          className="text-xs text-green-600 hover:text-green-800 underline mt-1"
+                          className="text-xs text-purple-600 hover:text-purple-800 underline mt-1"
                         >
                           日程を変更する
                         </button>
@@ -804,7 +828,6 @@ export default function SeminarDetailPage() {
                         />
                       </div>
 
-
                       {formData.preferredDate && formData.preferredTime ? (
                         <button
                           type="submit"
@@ -823,8 +846,8 @@ export default function SeminarDetailPage() {
                       )}
 
                       <div className="text-center mt-3">
-                        <p className="text-xs text-green-600 font-semibold">
-                          ✅ クレジットカード不要・完全無料
+                        <p className="text-xs text-purple-600 font-semibold">
+                          💳 クレジットカード決済可能
                         </p>
                         <p className="text-xs text-gray-500 mt-1">
                           ※24時間以内に詳細メールをお送りします
@@ -1041,30 +1064,30 @@ export default function SeminarDetailPage() {
             <div className="p-6">
               <div className="space-y-6">
                 {/* セミナー情報 */}
-                <div className="bg-blue-50 rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-blue-900 mb-4">セミナー情報</h4>
+                <div className="bg-purple-50 rounded-xl p-6">
+                  <h4 className="text-lg font-bold text-purple-900 mb-4">セミナー情報</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-blue-800 font-medium">セミナー名</span>
-                      <span className="text-blue-900">保護者向けChatGPT活用セミナー</span>
+                      <span className="text-purple-800 font-medium">セミナー名</span>
+                      <span className="text-purple-900">探究×AI活用セミナー</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-blue-800 font-medium">開催日時</span>
-                      <span className="text-blue-900 font-semibold">
+                      <span className="text-purple-800 font-medium">開催日時</span>
+                      <span className="text-purple-900 font-semibold">
                         {formData.preferredDate} {formData.preferredTime}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-blue-800 font-medium">所要時間</span>
-                      <span className="text-blue-900">90分</span>
+                      <span className="text-purple-800 font-medium">所要時間</span>
+                      <span className="text-purple-900">90分</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-blue-800 font-medium">参加費</span>
-                      <span className="text-blue-900 font-bold text-lg">無料</span>
+                      <span className="text-purple-800 font-medium">参加費</span>
+                      <span className="text-purple-900 font-bold text-lg">¥5,000</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-blue-800 font-medium">形式</span>
-                      <span className="text-blue-900">オンライン（Zoom）</span>
+                      <span className="text-purple-800 font-medium">形式</span>
+                      <span className="text-purple-900">オンライン（Zoom）</span>
                     </div>
                   </div>
                 </div>
