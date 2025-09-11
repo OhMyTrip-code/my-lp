@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SimpleBookingForm from "../components/SimpleBookingForm";
 
 export default function ConsultationPage() {
@@ -19,7 +20,7 @@ export default function ConsultationPage() {
             <SimpleBookingForm subject="個人相談30分（無料） 予約" />
           </div>
           <div className="mt-4">
-            <a href="/seminars" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#0073e6] text-[#0073e6] font-bold rounded-full hover:bg-blue-50">開催予定セミナーを見る</a>
+              <Link href="/#courses" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#0073e6] text-[#0073e6] font-bold rounded-full hover:bg-blue-50">開催予定セミナーを見る</Link>
           </div>
         </div>
       </section>

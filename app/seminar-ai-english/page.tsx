@@ -1,12 +1,14 @@
+import Link from 'next/link'
+
 export default function AIEnglishSeminar() {
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-6">
         <div className="max-w-4xl mx-auto px-6">
-          <a href="/" className="inline-flex items-center text-[#0073e6] font-semibold hover:underline mb-4">
+          <Link href="/" className="inline-flex items-center text-[#0073e6] font-semibold hover:underline mb-4">
             ← セミナー一覧に戻る
-          </a>
+          </Link>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             英検と&ldquo;使える英語&rdquo;を両立
           </h1>

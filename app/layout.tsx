@@ -19,22 +19,22 @@ const notoJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Shindo for Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
+  title: "Shindo Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
   description: "年中〜小6向け、AI・プログラミング・STEAM教育を通じて未来の力を育む体験型学習プログラム。親子で参加できる少人数制クラス。無料体験会受付中！",
-  keywords: ["Shindo for Kids", "AI教育", "子ども向けAI", "プログラミング", "STEAM教育", "年中", "年長", "小学生", "親子学習", "体験会"],
+  keywords: ["Shindo Kids", "AI教育", "子ども向けAI", "プログラミング", "STEAM教育", "年中", "年長", "小学生", "親子学習", "体験会"],
   icons: {
     icon: "/brand/logo.png"
   },
   openGraph: {
-    title: "Shindo for Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
+    title: "Shindo Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
     description: "年中〜小6向けAI・プログラミング・STEAM教育プログラム。無料体験会受付中！",
     type: "website",
     locale: "ja_JP",
-    siteName: "Shindo for Kids"
+    siteName: "Shindo Kids"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shindo for Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
+    title: "Shindo Kids | 子どもと一緒に学ぶAI時代の教育プログラム",
     description: "年中〜小6向けAI・プログラミング・STEAM教育プログラム。無料体験会受付中！"
   },
   robots: {

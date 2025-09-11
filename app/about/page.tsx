@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AboutPage() {
   return (
     <main className="pt-28">
@@ -78,8 +80,8 @@ export default function AboutPage() {
               個人相談30分（無料）を受付中
             </div>
             <div className="flex gap-3">
-              <a href="/consultation" className="px-5 py-3 bg-[#0073e6] text-white font-bold rounded-full hover:bg-[#0052cc]">個人相談を予約する</a>
-              <a href="/faq" className="px-5 py-3 border-2 border-[#0073e6] text-[#0073e6] font-bold rounded-full hover:bg-blue-50">よくある質問</a>
+              <Link href="/consultation" className="px-5 py-3 bg-[#0073e6] text-white font-bold rounded-full hover:bg-[#0052cc]">個人相談を予約する</Link>
+              <Link href="/#faq" className="px-5 py-3 border-2 border-[#0073e6] text-[#0073e6] font-bold rounded-full hover:bg-blue-50">よくある質問</Link>
             </div>
           </div>
         </div>

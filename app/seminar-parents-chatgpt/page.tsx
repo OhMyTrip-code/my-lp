@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function SeminarDetailPage() {
@@ -117,20 +118,20 @@ export default function SeminarDetailPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <a href="/" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Image
                   src="/brand/logo.png"
-                  alt="Shindo for Kids"
+                  alt="Shindo Kids"
                   width={32}
                   height={32}
                   className="mr-2"
                 />
-                <span className="font-bold text-base sm:text-lg">Shindo for Kids</span>
-              </a>
+                <span className="font-bold text-base sm:text-lg">Shindo Kids</span>
+              </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <a href="/" className="text-gray-700 hover:text-black transition text-sm lg:text-base">ホーム</a>
-              <a href="/#courses" className="text-gray-700 hover:text-black transition text-sm lg:text-base">コース一覧</a>
+              <Link href="/" className="text-gray-700 hover:text-black transition text-sm lg:text-base">ホーム</Link>
+              <Link href="/#courses" className="text-gray-700 hover:text-black transition text-sm lg:text-base">コース一覧</Link>
               <a 
                 href="#apply"
                 className="bg-black text-white px-3 py-2 lg:px-4 rounded-lg hover:bg-gray-800 transition text-sm lg:text-base"
@@ -156,9 +157,11 @@ export default function SeminarDetailPage() {
         {/* Hero Section with Video/Image */}
         <section className="relative h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[500px] bg-black">
           <Image
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070"
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=60"
             alt="セミナー風景"
             fill
+            priority
+            sizes="100vw"
             className="object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -645,7 +648,7 @@ export default function SeminarDetailPage() {
                       <div className="md:flex">
                         <div className="md:w-1/3">
                           <Image
-                            src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974"
+                            src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=1200&q=60"
                             alt="講師"
                             width={400}
                             height={400}
@@ -1147,18 +1150,18 @@ export default function SeminarDetailPage() {
             <div className="flex items-center justify-center mb-4">
               <Image
                 src="/brand/logo.png"
-                alt="Shindo for Kids"
+                alt="Shindo Kids"
                 width={32}
                 height={32}
                 className="mr-2 brightness-0 invert"
               />
-              <span className="font-bold text-lg">Shindo for Kids</span>
+              <span className="font-bold text-lg">Shindo Kids</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               AIで子どもの可能性を広げる
             </p>
             <p className="text-gray-500 text-xs">
-              © 2024 Shindo for Kids. All rights reserved.
+              © 2024 Shindo Kids. All rights reserved.
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const courses = [
@@ -12,7 +12,7 @@ export default function Home() {
       price: '無料',
       badge: '完全無料',
       description: 'まずは保護者さまがChatGPTの基礎と安全な使い方を学びます',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=60',
     },
     {
       title: '英語×AI活用セミナー',
@@ -21,7 +21,7 @@ export default function Home() {
       price: '¥5,000',
       badge: '人気',
       description: 'AIを使った効果的な英語学習方法を親子で学びます',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=60',
     },
     {
       title: '探究×AI活用セミナー',
@@ -30,7 +30,7 @@ export default function Home() {
       price: '¥5,000',
       badge: 'おすすめ',
       description: '探究学習にAIを活用し、深い学びを親子で実現します',
-      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070',
+      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=60',
     },
   ]
 
@@ -41,16 +41,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <a href="/" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Image
                   src="/brand/logo.png"
-                  alt="Shindo for Kids"
+                  alt="Shindo Kids"
                   width={32}
                   height={32}
                   className="mr-2"
                 />
-                <span className="font-bold text-base sm:text-lg">Shindo for Kids</span>
-              </a>
+                <span className="font-bold text-base sm:text-lg">Shindo Kids</span>
+              </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <a href="#courses" className="text-gray-700 hover:text-black transition text-sm lg:text-base">コース</a>
@@ -86,6 +86,8 @@ export default function Home() {
               src="/brand/ホームページ.jpg"
               alt="Background"
               fill
+              priority
+              sizes="100vw"
               className="object-cover opacity-40"
             />
           </div>
@@ -165,6 +167,7 @@ export default function Home() {
                       src={course.image}
                       alt={course.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover group-hover:scale-110 transition duration-300"
                     />
                     {course.badge && (
@@ -244,9 +247,10 @@ export default function Home() {
               </div>
               <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=60"
                   alt="Team"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -314,7 +318,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 bg-black text-white">
+        <section id="voice" className="py-20 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">受講者の声</h2>
@@ -496,12 +500,12 @@ export default function Home() {
               <div className="flex items-center mb-4">
                 <Image
                   src="/brand/logo.png"
-                  alt="Shindo for Kids"
+                  alt="Shindo Kids"
                   width={32}
                   height={32}
                   className="mr-2 brightness-0 invert"
                 />
-                <span className="font-bold text-lg">Shindo for Kids</span>
+                <span className="font-bold text-lg">Shindo Kids</span>
               </div>
               <p className="text-gray-400 text-sm">
                 AIで子どもの可能性を広げる
@@ -531,7 +535,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Shindo for Kids. All rights reserved.</p>
+            <p>© 2024 Shindo Kids. All rights reserved.</p>
           </div>
         </div>
       </footer>
