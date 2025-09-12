@@ -221,7 +221,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">なぜ今、AI教育なのか</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">なぜ今、AI教育なのか</h2>
                 <p className="text-lg text-gray-700 mb-6">
                   AIは既に私たちの生活に深く浸透し、子どもたちが大人になる頃には、
                   AIとの共存が当たり前の時代になります。
