@@ -178,7 +178,7 @@ export default function AIEnglishSeminar() {
                 こちらにGoogle FormのiframeタグやURLを埋め込みます
               </p>
               <code className="text-xs text-gray-600 bg-white px-4 py-2 rounded block mb-6">
-                &lt;iframe src="https://forms.google.com/your-form-2" width="100%" height="600"&gt;&lt;/iframe&gt;
+                &lt;iframe src=&quot;https://forms.google.com/your-form-2&quot; width=&quot;100%&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;
               </code>
               <a
                 href="https://forms.google.com/your-form-2"

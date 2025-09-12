@@ -21,10 +21,6 @@ export default function ResearchAISeminarPage() {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert('お申し込みありがとうございます！メールにて詳細をお送りいたします。')
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -525,7 +521,7 @@ export default function ResearchAISeminarPage() {
                             for (let day = 1; day <= daysInMonth; day++) {
                               const date = new Date(currentYear, currentMonth, day)
                               const dayOfWeek = date.getDay()
-                              const isWeekend = dayOfWeek === 0 || dayOfWeek === 6
+                                  const isWeekend = dayOfWeek === 0 || dayOfWeek === 6
                               const isToday = day === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()
                               
                               // セミナー開催日かどうかを判定
@@ -937,7 +933,6 @@ export default function ResearchAISeminarPage() {
                         // 日付セルを追加
                         for (let day = 1; day <= daysInMonth; day++) {
                           const date = new Date(currentYear, currentMonth, day)
-                          const dayOfWeek = date.getDay()
                           const isToday = day === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()
                           const hasSession = day >= today.getDate()
                           const dateString = `2025-09-${day.toString().padStart(2, '0')}`
